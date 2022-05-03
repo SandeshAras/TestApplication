@@ -6,9 +6,9 @@ namespace WebAPI.Controllers
     public class HomeController : Controller
     {
         [HttpPost]
-        public IActionResult Index(Details detail)
+        public IActionResult Index([FromBody]Details detail)
         {
-            return View();
+            return StatusCode(StatusCodes.Status201Created, detail);
         }
     }
 }
